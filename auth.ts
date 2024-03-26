@@ -8,14 +8,19 @@ export const config = {
     logo: "https://next-auth.js.org/img/logo/logo-sm.png",
   },
   providers: [Github],
-  basePath: "/auth",
+  basePath: "/api/auth",
   callbacks: {
     authorized({ request, auth }) {
-      const { pathname } = request.nextUrl;
-      if (pathname === "/middleware-example") return !!auth;
-      return true; //その他のパスではいつでもアクセス許可
+      try {
+        const { pathname } = request.nextUrl;
+        if (pathname === "/middleware-example") return !!auth;
+        return true;
+      } catch (err) {
+        console.log(err);
+      }
     },
     jwt({ token, trigger, session }) {
+      // console.log(token);
       if (trigger === "update") token.name = session.user.name;
       return token;
     },

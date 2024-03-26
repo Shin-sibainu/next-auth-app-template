@@ -1,6 +1,9 @@
+import { auth } from "@/auth";
 import CustomLink from "@/components/custom-link";
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-3xl font-bold">🚀NextAuth.js Tutorial</h1>
@@ -19,7 +22,7 @@ export default function Home() {
           Current Session
         </div>
         <pre className="py-6 px-4 whitespace-pre-wrap break-all">
-          {/* {JSON.stringify(session, null, 2)} */}
+          {JSON.stringify(session, null, 2)}
         </pre>
       </div>
     </div>
