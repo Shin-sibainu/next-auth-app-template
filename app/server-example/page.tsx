@@ -1,9 +1,7 @@
 import CustomLink from "@/components/custom-link";
 import SessionData from "@/components/session-data";
-import { auth } from "@/auth";
 
 export default async function Page() {
-  const session = await auth();
   return (
     <div className="space-y-2">
       <h1 className="text-3xl font-bold">React Server Componentの扱い方</h1>
@@ -18,7 +16,7 @@ export default async function Page() {
         </CustomLink>
         メソッドを利用してsessionを取得しています。
       </p>
-      <SessionData session={session} />
+      <SessionData />
     </div>
   );
 }

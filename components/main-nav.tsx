@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { cn } from "@/lib/utils";
 import CustomLink from "./custom-link";
 import {
@@ -25,22 +23,6 @@ export function MainNav() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            {/* <NavigationMenuTrigger className="px-2">
-              Server Side
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <ListItem href="/server-example" title="RSC Example">
-                  Protecting React Server Component.
-                </ListItem>
-                <ListItem href="/middleware-example" title="Middleware Example">
-                  Using Middleware to protect pages & APIs.
-                </ListItem>
-                <ListItem href="/api-example" title="Route Handler Example">
-                  Getting the session inside an API Route.
-                </ListItem>
-              </ul>
-            </NavigationMenuContent> */}
             <NavigationMenuLink
               href="/server-example"
               className={navigationMenuTriggerStyle()}

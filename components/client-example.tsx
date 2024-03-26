@@ -8,7 +8,7 @@ export default function ClientExample() {
         このページでは
         <CustomLink href="https://nextjs.authjs.dev/react#usesession">
           <code>useSession</code>
-        </CustomLink>{" "}
+        </CustomLink>
         React Hookを使用して、クライアントサイドでセッションデータを取得します。
       </p>
       <p>
